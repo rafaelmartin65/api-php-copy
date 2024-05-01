@@ -1,0 +1,54 @@
+:root {
+    --gristexto: #666772;
+    --grisfondo: #efeff0;
+    --naranja: #ff6a00d1;
+    --azul: #0761aa;
+}
+form {
+    display: flex;
+    justify-content: flex-end;
+}
+form button {
+    margin: 4px;
+}
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 2px;
+}
+#preheader {
+    padding: 5px;
+    background-color: var(--grisfondo);
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    margin: 4px;
+}
+button {
+    margin: 4px;
+}
+.boton {
+    color: var(--azul);
+    border-radius: 4px;
+    border: solid var(--azul) 1px;
+    font-weight: 600;
+    margin: 4px;
+}
+.boton:hover {
+    color: white;
+    background-color: var(--azul);  
+    border-radius: 4px;
+    border: solid var(--azul) 1px;
+    font-weight: 600;
+}
+@media (width<770px) {
+    .buscador {
+        display: none;
+    }
+}
