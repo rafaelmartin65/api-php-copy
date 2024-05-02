@@ -14,8 +14,8 @@ document.getElementById("botonAceptar").addEventListener("click", () => {
       },
       body: JSON.stringify(formDataJson),
     };
-    // Enviar la solicitud fetch al servidor JSON
-    fetch("http://localhost/EJERCICIOS-PHP/api-php/Ejercicio10-API/", fetchOptions)
+    // Enviar la solicitud fetch al la API
+    fetch("http://localhost/API-PHP/Ejercicio10-API/", fetchOptions)
       .then((response) => response.text())
       .then((data) => {
         console.log("Respuesta del servidor:", data);
@@ -41,8 +41,8 @@ document.getElementById("botonAceptar").addEventListener("click", () => {
       },
       body: JSON.stringify(formDataJson),
     };
-    // Enviar la solicitud fetch al servidor JSON
-    fetch("http://localhost:3000/alumnos/" + formDataJson.id, fetchOptions)
+    // Enviar la solicitud fetch al servidor de la API
+    fetch("http://localhost/API-PHP/Ejercicio10-API/" + formDataJson.id, fetchOptions)
       .then((response) => response.text())
       .then((data) => {
         console.log("Respuesta del servidor:", data);

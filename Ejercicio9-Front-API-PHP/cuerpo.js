@@ -1,6 +1,6 @@
 
 console.log("entra en cuerpo.js");
-//let ultimo;
+//let ultimo = 0;
 //fetch("http://localhost/EJERCICIOS-PHP/api-php/Ejercicio10-API/")
 //  .then((response) => response.json)
 //  .then((datos) => {
@@ -13,9 +13,10 @@ console.log("entra en cuerpo.js");
 
 // Realizar la solicitud HTTP para obtener los datos
 let ultimo = 0;
-fetch("http://localhost/EJERCICIOS-PHP/api-php/Ejercicio10-API/")
+fetch("http://localhost/API-PHP/Ejercicio10-API/")
   .then(response => {
     if (!response.ok) {
+      console.log(response);
       throw new Error("La solicitud no pudo ser completada correctamente.");
     }
     return response.text(); // Convertir la respuesta a texto
@@ -129,7 +130,7 @@ function fmodificar(event) {
     .then((lineasFormulario) => {
       document.getElementById("cuerpo").innerHTML = lineasFormulario;
       document.getElementById("id").value = event.target.id;
-      fetch("http://localhost/EJERCICIOS-PHP/api-php/Ejercicio10-API/" + event.target.id)
+      fetch("http://localhost/API-PHP/Ejercicio10-API/?id=" + event.target.id)
         .then((response) => response.json())
         .then((fichaAlumno) => {
           document.getElementById("nombre").value = fichaAlumno.nombre;
@@ -162,7 +163,7 @@ document.getElementById("nuevo").addEventListener("click", (event) => {
 function feliminar(perfil) {
   let formData = new FormData();
   formData.append("nombre",perfil.nombre);
-  fetch("http://localhost/EJERCICIOS-PHP/api-php/Ejercicio10-API/" + perfil.id, {
+  fetch("http://localhost/API-PHP/Ejercicio10-API/" + perfil.id, {
     method: "DELETE",
   })
     .then((response) => response.json())
